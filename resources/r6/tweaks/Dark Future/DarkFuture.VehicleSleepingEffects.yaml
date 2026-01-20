@@ -1,0 +1,63 @@
+DarkFutureGameplayRestriction.SleepInVehicle:
+  $type: gamedataGameplayRestrictionStatusEffect_Record
+  duration: BaseStats.InfiniteDuration
+  dynamicDuration: False
+  isAffectedByTimeDilationNPC: True
+  isAffectedByTimeDilationPlayer: True
+  maxStacks: BaseStats.InfiniteStacks
+  reapplyPackagesOnMaxStacks: False
+  removeAllStacksWhenDurationEnds: False
+  removeOnStoryTier: False
+  replicated: False
+  savable: True
+  statusEffectType: BaseStatusEffectTypes.Misc
+  stopActiveSfxOnDeactivate: True
+  debugTags: []
+  gameplayTags:
+    - GameplayRestriction
+    - NoWeaponWheel
+    - VehicleBlockExit
+    - VehicleBlockRadioInput
+    - VehicleBlockPocketRadio
+    - NoPhone
+    - NoInhalerOrInjector
+    - NoGrenadeOrGadget
+    - NoPhotoMode
+    - BlockAllHubMenu
+    - NoDriving
+    - NoRadialMenus
+    - NoScanning
+    - NoCombat
+    - NoQuickHacks
+    - NoCrafting
+  immunityStats: []
+  packages: []
+  SFX: []
+  VFX: []
+
+DarkFutureGameplayRestriction.SleepInVehicleFPP:
+  $type: gamedataGameplayRestrictionStatusEffect_Record
+  duration: BaseStats.InfiniteDuration
+  dynamicDuration: False
+  isAffectedByTimeDilationNPC: True
+  isAffectedByTimeDilationPlayer: True
+  maxStacks: BaseStats.InfiniteStacks
+  reapplyPackagesOnMaxStacks: False
+  removeAllStacksWhenDurationEnds: False
+  removeOnStoryTier: False
+  replicated: False
+  savable: True
+  statusEffectType: BaseStatusEffectTypes.Misc
+  stopActiveSfxOnDeactivate: True
+  debugTags: []
+  gameplayTags:
+    - GameplayRestriction
+    - VehicleScene
+    - VehicleFPP
+    - VehicleOnlyForward
+    - VehicleBlockRadioInput
+    - VehicleBlockPocketRadio
+  immunityStats: []
+  packages: []
+  SFX: []
+  VFX: []

@@ -1,0 +1,107 @@
+#
+#
+# Common Records
+#
+#
+DarkFutureWeight.SmallDrink:
+  $type: gamedataConstantStatModifier_Record
+  value: 0
+  modifierType: Additive
+  statType: BaseStats.Weight
+
+DarkFutureWeight.LargeDrink:
+  $type: gamedataConstantStatModifier_Record
+  value: 0
+  modifierType: Additive
+  statType: BaseStats.Weight
+
+#
+#
+# Base Game Alcohol Updates
+#
+#
+
+#
+#
+# Common Alcohol
+#
+#
+Items.LowQualityAlcohol1: &CommonAlcohol
+  objectActions:
+    - !append-once ItemAction.Drop
+  statModifiers:
+    - !append-once DarkFutureWeight.SmallDrink
+Items.LowQualityAlcohol2: *CommonAlcohol
+Items.LowQualityAlcohol3: *CommonAlcohol
+Items.LowQualityAlcohol4: *CommonAlcohol
+Items.LowQualityAlcohol5: *CommonAlcohol
+Items.LowQualityAlcohol6: *CommonAlcohol
+Items.LowQualityAlcohol8: *CommonAlcohol
+Items.LowQualityAlcohol9: *CommonAlcohol
+Items.NomadsAlcohol2: *CommonAlcohol
+
+#
+#
+# Uncommon Alcohol
+#
+#
+Items.LowQualityAlcohol7: &UncommonAlcohol
+  objectActions:
+    - !append-once ItemAction.Drop
+  statModifiers:
+    - !append-once DarkFutureWeight.SmallDrink
+Items.MediumQualityAlcohol2: *UncommonAlcohol
+Items.MediumQualityAlcohol3: *UncommonAlcohol
+Items.MediumQualityAlcohol4: *UncommonAlcohol
+Items.MediumQualityAlcohol5: *UncommonAlcohol
+Items.MediumQualityAlcohol6: *UncommonAlcohol
+Items.MediumQualityAlcohol7: *UncommonAlcohol
+Items.NomadsAlcohol1: *UncommonAlcohol
+
+#
+#
+# Rare Alcohol
+#
+#
+Items.GoodQualityAlcohol1: &RareAlcohol
+  objectActions:
+    - !append-once ItemAction.Drop
+  statModifiers:
+    - !append-once DarkFutureWeight.LargeDrink
+Items.MediumQualityAlcohol1: *RareAlcohol
+Items.GoodQualityAlcohol2: *RareAlcohol
+Items.GoodQualityAlcohol3: *RareAlcohol
+Items.GoodQualityAlcohol4: *RareAlcohol
+Items.GoodQualityAlcohol5: *RareAlcohol
+Items.GoodQualityAlcohol6: *RareAlcohol
+
+#
+#
+# Epic Alcohol
+#
+#
+Items.TopQualityAlcohol1: &EpicAlcohol
+  objectActions:
+    - !append-once ItemAction.Drop
+  statModifiers:
+    - !append-once DarkFutureWeight.LargeDrink
+Items.TopQualityAlcohol2: *EpicAlcohol
+Items.TopQualityAlcohol3: *EpicAlcohol
+Items.TopQualityAlcohol4: *EpicAlcohol
+Items.TopQualityAlcohol5: *EpicAlcohol
+Items.TopQualityAlcohol6: *EpicAlcohol
+Items.TopQualityAlcohol7: *EpicAlcohol
+
+#
+#
+# Legendary Alcohol
+#
+#
+Items.TopQualityAlcohol8: &LegendaryAlcohol
+  objectActions:
+    - !append-once ItemAction.Drop
+  statModifiers:
+    - !append-once DarkFutureWeight.SmallDrink
+Items.TopQualityAlcohol9: *LegendaryAlcohol
+Items.TopQualityAlcohol10: *LegendaryAlcohol
+Items.KerryAlcohol1: *LegendaryAlcohol

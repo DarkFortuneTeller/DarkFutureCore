@@ -1,0 +1,126 @@
+# Vendor Prices
+#
+DarkFuturePrice.AmmoHandgunBuyMult:
+  $type: gamedataConstantStatModifier_Record
+  value: 1.0
+  modifierType: Multiplier
+  statType: BaseStats.Price
+
+DarkFuturePrice.AmmoRifleBuyMult:
+  $type: gamedataConstantStatModifier_Record
+  value: 1.0
+  modifierType: Multiplier
+  statType: BaseStats.Price
+
+DarkFuturePrice.AmmoShotgunBuyMult:
+  $type: gamedataConstantStatModifier_Record
+  value: 1.0
+  modifierType: Multiplier
+  statType: BaseStats.Price
+
+DarkFuturePrice.AmmoSniperBuyMult:
+  $type: gamedataConstantStatModifier_Record
+  value: 1.0
+  modifierType: Multiplier
+  statType: BaseStats.Price
+
+DarkFuturePrice.AmmoSellMult:
+  $type: gamedataConstantStatModifier_Record
+  value: 1.0
+  modifierType: Multiplier
+  statType: BaseStats.Price
+
+DarkFutureItem.AmmoHandgunQuantityOverride:
+  $type: gamedataConstantStatModifier_Record
+  value: 0
+  modifierType: Additive
+  statType: BaseStats.Quantity
+
+DarkFutureItem.AmmoRifleQuantityOverride:
+  $type: gamedataConstantStatModifier_Record
+  value: 0
+  modifierType: Additive
+  statType: BaseStats.Quantity
+
+DarkFutureItem.AmmoShotgunQuantityOverride:
+  $type: gamedataConstantStatModifier_Record
+  value: 0
+  modifierType: Additive
+  statType: BaseStats.Quantity
+
+DarkFutureItem.AmmoSniperQuantityOverride:
+  $type: gamedataConstantStatModifier_Record
+  value: 0
+  modifierType: Additive
+  statType: BaseStats.Quantity
+
+DarkFutureWeight.AmmoHandgun:
+  $type: gamedataConstantStatModifier_Record
+  value: 0.0
+  modifierType: Additive
+  statType: BaseStats.Weight
+
+DarkFutureWeight.AmmoRifle:
+  $type: gamedataConstantStatModifier_Record
+  value: 0.0
+  modifierType: Additive
+  statType: BaseStats.Weight
+
+DarkFutureWeight.AmmoShotgun:
+  $type: gamedataConstantStatModifier_Record
+  value: 0.0
+  modifierType: Additive
+  statType: BaseStats.Weight
+
+DarkFutureWeight.AmmoSniper:
+  $type: gamedataConstantStatModifier_Record
+  value: 0.0
+  modifierType: Additive
+  statType: BaseStats.Weight
+
+#
+# Apply Price Changes
+#
+Ammo.HandgunAmmo:
+  objectActions:
+    - !remove ItemAction.Disassemble
+  buyPrice:
+    - !append-once DarkFuturePrice.AmmoHandgunBuyMult
+  sellPrice:
+    - !append-once DarkFuturePrice.AmmoSellMult
+  statModifiers:
+    - !append-once DarkFutureWeight.AmmoHandgun
+    - !append-once DarkFutureItem.AmmoHandgunQuantityOverride
+
+Ammo.RifleAmmo:
+  objectActions:
+    - !remove ItemAction.Disassemble
+  buyPrice:
+    - !append-once DarkFuturePrice.AmmoRifleBuyMult
+  sellPrice:
+    - !append-once DarkFuturePrice.AmmoSellMult
+  statModifiers:
+    - !append-once DarkFutureWeight.AmmoRifle
+    - !append-once DarkFutureItem.AmmoRifleQuantityOverride
+
+Ammo.ShotgunAmmo:
+  objectActions:
+    - !remove ItemAction.Disassemble
+  buyPrice:
+    - !append-once DarkFuturePrice.AmmoShotgunBuyMult
+  sellPrice:
+    - !append-once DarkFuturePrice.AmmoSellMult
+  statModifiers:
+    - !append-once DarkFutureWeight.AmmoShotgun
+    - !append-once DarkFutureItem.AmmoShotgunQuantityOverride
+
+Ammo.SniperRifleAmmo:
+  objectActions:
+    - !remove ItemAction.Disassemble
+  buyPrice:
+    - !append-once DarkFuturePrice.AmmoSniperBuyMult
+  sellPrice:
+    - !append-once DarkFuturePrice.AmmoSellMult
+  statModifiers:
+    - !append-once DarkFutureWeight.AmmoSniper
+    - !append-once DarkFutureItem.AmmoSniperQuantityOverride

@@ -1,0 +1,283 @@
+#
+# Note: Hydration used to cause a Movement Speed debuff. This was removed because
+# it causes a progression blocker during "Spider and the Fly" at very low Hydration;
+# the Chimera will always catch and kill you at -40% Movement Speed.
+#
+
+# Common Records
+DarkFutureStatusEffect.SingleStack_StatModifier:
+  $type: gamedataConstantStatModifier_Record
+  value: 1
+  modifierType: Additive
+  statType: BaseStats.MaxStacks
+
+DarkFutureStatusEffect.SingleStack:
+  $type: gamedataStatModifierGroup_Record
+  drawBasedOnStatType: False
+  optimiseCombinedModifiers: False
+  saveBasedOnStatType: False
+  statModsLimit: -1
+  relatedModifierGroups: []
+  statModifiers:
+    - DarkFutureStatusEffect.SingleStack_StatModifier
+
+DarkFutureStatusEffectTypes.Hydration:
+  $type: gamedataStatusEffectType_Record
+  enumComment: ''
+  enumName: Hydration
+
+UIIcon.DarkFutureHydrationIcon:
+  $type: gamedataUIIcon_Record
+  atlasPartName: drink
+  atlasResourcePath: base\gameplay\gui\common\icons\mappin_icons.inkatlas
+
+#
+#
+# Hydration Penalty 01
+#
+#
+DarkFutureStatusEffect.HydrationPenalty_01_StatsPackageModifier_StaminaRegenRate:
+  $type: gamedataConstantStatModifier_Record
+  value: 0.90
+  modifierType: Multiplier
+  statType: BaseStats.StaminaRegenRate
+
+DarkFutureStatusEffect.HydrationPenalty_01_StatsPackage:
+  $type: gamedataGameplayLogicPackage_Record
+  stackable: False
+  animationWrapperOverrides: []
+  effectors: []
+  items: []
+  statPools: []
+  stats:
+    - DarkFutureStatusEffect.HydrationPenalty_01_StatsPackageModifier_StaminaRegenRate
+
+DarkFutureStatusEffect.HydrationPenalty_01_UIData:
+  $type: gamedataStatusEffectUIData_Record
+  description: l"DarkFutureHydrationPenalty01Desc"
+  displayName: l"DarkFutureHydrationPenalty01Name"
+  fluffText: ''
+  iconPath: DarkFutureHydrationIcon
+  priority: -4
+  floatValues: []
+  intValues:
+    - -10
+  nameValues: []
+  stats: []
+
+DarkFutureStatusEffect.HydrationPenalty_01:
+  $type: gamedataStatusEffect_Record
+  duration: BaseStats.InfiniteDuration
+  dynamicDuration: False
+  isAffectedByTimeDilationNPC: True
+  isAffectedByTimeDilationPlayer: True
+  maxStacks: DarkFutureStatusEffect.SingleStack
+  reapplyPackagesOnMaxStacks: False
+  removeAllStacksWhenDurationEnds: False
+  removeOnStoryTier: False
+  replicated: True
+  savable: True
+  statusEffectType: DarkFutureStatusEffectTypes.Hydration
+  stopActiveSfxOnDeactivate: True
+  uiData: DarkFutureStatusEffect.HydrationPenalty_01_UIData
+  debugTags: []
+  gameplayTags:
+    - Debuff
+    - DarkFutureNeedHydration
+    - DarkFutureInfiniteDurationEffect
+    - DarkFutureCanHideOnBuffBar
+  immunityStats: []
+  packages:
+    - DarkFutureStatusEffect.HydrationPenalty_01_StatsPackage
+  SFX: []
+  VFX: []
+  canReapply: True
+
+#
+#
+# Hydration Penalty 02
+#
+#
+DarkFutureStatusEffect.HydrationPenalty_02_StatsPackageModifier_StaminaRegenRate:
+  $type: gamedataConstantStatModifier_Record
+  value: 0.75
+  modifierType: Multiplier
+  statType: BaseStats.StaminaRegenRate
+
+DarkFutureStatusEffect.HydrationPenalty_02_StatsPackage:
+  $type: gamedataGameplayLogicPackage_Record
+  stackable: False
+  animationWrapperOverrides: []
+  effectors: []
+  items: []
+  statPools: []
+  stats:
+    - DarkFutureStatusEffect.HydrationPenalty_02_StatsPackageModifier_StaminaRegenRate
+
+DarkFutureStatusEffect.HydrationPenalty_02_UIData:
+  $type: gamedataStatusEffectUIData_Record
+  description: l"DarkFutureHydrationPenalty02Desc_Core"
+  displayName: l"DarkFutureHydrationPenalty02Name"
+  fluffText: ''
+  iconPath: DarkFutureHydrationIcon
+  priority: -4
+  floatValues: []
+  intValues:
+    - -25
+  nameValues: []
+  stats: []
+
+DarkFutureStatusEffect.HydrationPenalty_02:
+  $type: gamedataStatusEffect_Record
+  duration: BaseStats.InfiniteDuration
+  dynamicDuration: False
+  isAffectedByTimeDilationNPC: True
+  isAffectedByTimeDilationPlayer: True
+  maxStacks: DarkFutureStatusEffect.SingleStack
+  reapplyPackagesOnMaxStacks: False
+  removeAllStacksWhenDurationEnds: False
+  removeOnStoryTier: False
+  replicated: True
+  savable: True
+  statusEffectType: DarkFutureStatusEffectTypes.Hydration
+  stopActiveSfxOnDeactivate: True
+  uiData: DarkFutureStatusEffect.HydrationPenalty_02_UIData
+  debugTags: []
+  gameplayTags:
+    - Debuff
+    - DarkFutureNeedHydration
+    - DarkFutureInfiniteDurationEffect
+    - DarkFutureCanHideOnBuffBar
+    - DarkFutureShouldInterruptSprintOnEmptyStamina
+  immunityStats: []
+  packages:
+    - DarkFutureStatusEffect.HydrationPenalty_02_StatsPackage
+  SFX: []
+  VFX: []
+  canReapply: True
+
+#
+#
+# Hydration Penalty 03
+#
+#
+DarkFutureStatusEffect.HydrationPenalty_03_StatsPackageModifier_StaminaRegenRate:
+  $type: gamedataConstantStatModifier_Record
+  value: 0.50
+  modifierType: Multiplier
+  statType: BaseStats.StaminaRegenRate
+
+DarkFutureStatusEffect.HydrationPenalty_03_StatsPackage:
+  $type: gamedataGameplayLogicPackage_Record
+  stackable: False
+  animationWrapperOverrides: []
+  effectors: []
+  items: []
+  statPools: []
+  stats:
+    - DarkFutureStatusEffect.HydrationPenalty_03_StatsPackageModifier_StaminaRegenRate
+
+DarkFutureStatusEffect.HydrationPenalty_03_UIData:
+  $type: gamedataStatusEffectUIData_Record
+  description: l"DarkFutureHydrationPenalty03Desc_Core"
+  displayName: l"DarkFutureHydrationPenalty03Name"
+  fluffText: ''
+  iconPath: DarkFutureHydrationIcon
+  priority: -4
+  floatValues: []
+  intValues:
+    - -50
+  nameValues: []
+  stats: []
+
+DarkFutureStatusEffect.HydrationPenalty_03:
+  $type: gamedataStatusEffect_Record
+  duration: BaseStats.InfiniteDuration
+  dynamicDuration: False
+  isAffectedByTimeDilationNPC: True
+  isAffectedByTimeDilationPlayer: True
+  maxStacks: DarkFutureStatusEffect.SingleStack
+  reapplyPackagesOnMaxStacks: False
+  removeAllStacksWhenDurationEnds: False
+  removeOnStoryTier: False
+  replicated: True
+  savable: True
+  statusEffectType: DarkFutureStatusEffectTypes.Hydration
+  stopActiveSfxOnDeactivate: True
+  uiData: DarkFutureStatusEffect.HydrationPenalty_03_UIData
+  debugTags: []
+  gameplayTags:
+    - Debuff
+    - DarkFutureNeedHydration
+    - DarkFutureInfiniteDurationEffect
+    - DarkFutureCanHideOnBuffBar
+    - DarkFutureShouldInterruptSprintOnEmptyStamina
+  immunityStats: []
+  packages:
+    - DarkFutureStatusEffect.HydrationPenalty_03_StatsPackage
+  SFX: []
+  VFX: []
+  canReapply: True
+
+#
+#
+# Hydration Penalty 04
+#
+#
+DarkFutureStatusEffect.HydrationPenalty_04_StatsPackageModifier_StaminaRegenRate:
+  $type: gamedataConstantStatModifier_Record
+  value: 0.25
+  modifierType: Multiplier
+  statType: BaseStats.StaminaRegenRate
+
+DarkFutureStatusEffect.HydrationPenalty_04_StatsPackage:
+  $type: gamedataGameplayLogicPackage_Record
+  stackable: False
+  animationWrapperOverrides: []
+  effectors: []
+  items: []
+  statPools: []
+  stats:
+    - DarkFutureStatusEffect.HydrationPenalty_04_StatsPackageModifier_StaminaRegenRate
+
+DarkFutureStatusEffect.HydrationPenalty_04_UIData:
+  $type: gamedataStatusEffectUIData_Record
+  description: l"DarkFutureHydrationPenalty04Desc_Core"
+  displayName: l"DarkFutureHydrationPenalty04Name"
+  fluffText: ''
+  iconPath: DarkFutureHydrationIcon
+  priority: -4
+  floatValues: []
+  intValues:
+    - -75
+  nameValues: []
+  stats: []
+
+DarkFutureStatusEffect.HydrationPenalty_04:
+  $type: gamedataStatusEffect_Record
+  duration: BaseStats.InfiniteDuration
+  dynamicDuration: False
+  isAffectedByTimeDilationNPC: True
+  isAffectedByTimeDilationPlayer: True
+  maxStacks: DarkFutureStatusEffect.SingleStack
+  reapplyPackagesOnMaxStacks: False
+  removeAllStacksWhenDurationEnds: False
+  removeOnStoryTier: False
+  replicated: True
+  savable: True
+  statusEffectType: DarkFutureStatusEffectTypes.Hydration
+  stopActiveSfxOnDeactivate: True
+  uiData: DarkFutureStatusEffect.HydrationPenalty_04_UIData
+  debugTags: []
+  gameplayTags:
+    - Debuff
+    - DarkFutureNeedHydration
+    - DarkFutureInfiniteDurationEffect
+    - DarkFutureCanHideOnBuffBar
+    - DarkFutureShouldInterruptSprintOnEmptyStamina
+  immunityStats: []
+  packages:
+    - DarkFutureStatusEffect.HydrationPenalty_04_StatsPackage
+  SFX: []
+  VFX: []
+  canReapply: True
